@@ -12,7 +12,7 @@ function fetchQuestions() {
     });
 }
 
-//Questions & Options//
+//Questions1 & Options//
 function displayQuestion(question) {
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
