@@ -5,37 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App 2</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="container">
-      <div id="login-page">
-        <h1>Login</h1>
-        <input type="text" id="username" placeholder="Username" />
-        <input type="password" id="password" placeholder="Password" />
-        <button id="login-btn">Login</button>
-        <div id="register-link">
-          Don't have an account? <a href="#">Register</a>
+    <h1>Web Quiz App</h1>
+
+    <button id="googleLoginBtn">Login with Google</button>
+
+    <form id="registrationForm">
+      <h2>Register</h2>
+      <input type="email" id="regEmail" placeholder="Email" required />
+      <input type="password" id="regPassword" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+
+    <form id="emailLoginForm" style="display: none">
+      <h2>Login</h2>
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="wrapper">
+      <div class="quiz-container">
+        <div class="quiz-head">
+          <h1 class="quiz-title">Quiz Game</h1>
+          <div class="quiz-score flex">
+            <span id="correct-score"></span>/<span id="total-question"></span>
+          </div>
+        </div>
+        <div class="quiz-body">
+          <h2 class="quiz-question" id="question"></h2>
+          <ul class="quiz-options"></ul>
+          <div id="result"></div>
+        </div>
+        <div class="quiz-foot">
+          <button type="button" id="check-answer">Check Answer!</button>
+          <button type="button" id="play-again">Play Again!!</button>
         </div>
       </div>
-      <div id="register-page">
-        <h1>Register</h1>
-        <input type="text" id="register-username" placeholder="Username" />
-        <input type="password" id="register-password" placeholder="Password" />
-        <input type="file" id="profile-picture" accept="image/*" />
-        <button id="register-btn">Register</button>
-        <div id="login-link">
-          Already have an account? <a href="#">Login</a>
-        </div>
-        <div id="quiz-page">
-          <h1>Quiz</h1>
-          <div id="question"></div>
-          <div id="options"></div>
-          <button id="next-btn">Next Question</button>
-        </div>
-      </div>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
